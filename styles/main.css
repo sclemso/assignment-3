@@ -141,9 +141,10 @@ nav img {
  }
 
  .content-box {
+    position: relative;
     overflow: hidden;
     width: 75rem;
-    height: 20rem;
+    height: 27rem;
     border-radius: 15px;
     margin: 1.1rem auto;
  }
@@ -165,14 +166,139 @@ nav img {
 }
 
 #everyone {
-    transform: scale(1.2) translateX(5%);
-    object-position: -10% 40%;
+    transform: scale(1.2) translateX(-8%);
+    object-position: -10% 50%;
 }
 
 #hazel {
-    object-position: center 50%;
+    object-position: center 90%;
+    transform: scaleX(-1);
 }
 
 #pour {
-    object-position: -10% 40%;
+    object-position: -10% 0%;
+}
+
+#mangoes-title {
+    position: absolute;
+    color: white;
+    text-align: right;
+    top: 30%;
+    left: 40%;
+    font-size: 3rem;
+}
+
+#serving-title {
+    position: absolute;
+    color: white;
+    text-align: left;
+    top: 30%;
+    left: 10%;
+    font-size: 3rem;
+}
+
+#serving-button {
+    background-color: #C4956A;
+    color: #3C2A1A;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    width: 10rem;
+    height: 5rem;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 65%;
+    left: 30%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
+
+#everyone-title {
+    position: absolute;
+    color: white;
+    text-align: right;
+    top: 20%;
+    left: 70%;
+    font-size: 3rem;
+}
+
+#everyone-button {
+    background-color: #C4956A;
+    color: #3C2A1A;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    width: 10rem;
+    height: 3rem;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 55%;
+    left: 90%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
+
+#hazel-title {
+    position: absolute;
+    color: white;
+    text-align: left;
+    top: 30%;
+    left: 5%;
+    font-size: 3rem;
+}
+
+#pour-title {
+    position: absolute;
+    color: white;
+    text-align: right;
+    top: 10%;
+    left: 57%;
+    font-size: 3rem;
+}
+
+.story-scoop {
+    background-color: #8A9F7B;
+
+}
+
+.footer-column {
+  float: left;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  box-sizing: border-box;
+}
+
+.story-scoop:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#c1 {
+    width: 60%;
+}
+
+#c2 {
+    width: 40%;
+}
+
+.input-button {
+    background-color: #EDE4CD;
+    color: #8A7C69;
+    border: none;
+    margin: 0.2rem auto;
+    width: 80%;
+    height: 3rem;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.submit-button {
+    background-color: #3C2A1A;
+    color: #EDE4CD;
+    border: none;
+    margin: 0.5rem auto;
+    width: 80%;
+    height: 3rem;
+    text-align: center;
 }
