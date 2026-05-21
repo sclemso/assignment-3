@@ -1,0 +1,36 @@
+
+main h1 {
+    color: #4A5D3A;
+}
+
+.product-price {
+    color: #3C2A1A;
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-title {
+    color: #3C2A1A;
+}
+
+.product-card {
+  width: 22rem;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  color: white;
+}
+
+.product-image {
+  width: 100%;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: left;
+}

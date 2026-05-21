@@ -15,12 +15,12 @@
                 <div class="subnav-content">
                     <a href="/index.html">Home</a>
                     <a href="/pages/about.html">About</a>
-                    <a href="#">Menu</a>
-                    <a href="#">Events</a>
-                    <a href="#">Locations</a>
-                    <a href="#">Shop</a>
-                    <a href="#">FAQ</a>
-                    <a href="#">Contact</a>
+                    <a href="/pages/menu.html">Menu</a>
+                    <a href="/pages/events.html">Events</a>
+                    <a href="/pages/locations.html">Locations</a>
+                    <a href="/pages/shop.html">Shop</a>
+                    <a href="/pages/faq.html">FAQ</a>
+                    <a href="/pages/contact.html">Contact</a>
                 </div>
             </div>
             <h1> BILLY VAN CREAMY  </h1>
@@ -81,13 +81,26 @@
             <p> BILLY VAN CREAMY was founded in 2014 by brothers Mitch and Alex Wells. Starting with just one truck atop Ruckers Hill, Northcote, we now have stores in Melbourne and Perth. While the business continues to grow, our ingredients-driven approach to ice cream remains the same. </p>
             <p> We strive to source all of our ingredients from smaller, local producers who share our commitment to wholesome, sustainably made food that caters to all. </p>
         </div>
-        <div class="footer-column" id="c2">
+        <form action="" class="footer-column" id="c2">
             <h1>Scoop Club</h1>
             <p> Sign up to our newsletter to keep up with the latest offers and events. No spam. Just the important stuff.</p>
-            <button class="input-button">Name</button>
-            <button class="input-button">Email Address</button>
-            <button class="submit-button">Submit</button>
-        </div>
+            
+            <label for="name">Name</label>
+            <input class="input-button" placeholder="Jane Doe" name="name"/>
+
+            <label for="email">Email Address</label>
+            <input class="input-button" placeholder="Email Address" name="email"/>
+            <input class="submit-button" type="submit" value="Submit"/>
+        </form>
     </div>
+    <footer>
+        <p> BILLY VAN CREAMY acknowledges the Traditional Owners of Kulin and Noongar country, the Wurundjeri and Whadjuk people and their continuing connection to land, waters and culture on which our stores reside. We pay our respects to their Elders, past, present and emerging. Sovereignty has never been ceded. Always was, always will be, Aboriginal land.</p>
+        <div class="footer-bottom">
+            <img id="cr" src="/assets/copyright.svg" alt="Copyright" /> 
+            <p > billy van creamy 2026</p>
+            <img src="/assets/instagram.svg" id="copyright" class="footicon" alt="Instagram" /> 
+            <img src="/assets/facebook.svg" class="footicon" alt="Facebook" /> 
+        </div>
+    </footer>
 </body>
 </html>
