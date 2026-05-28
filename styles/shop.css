@@ -24,6 +24,10 @@ main h1 {
   color: white;
 }
 
+.product-card:hover {
+  cursor: pointer;
+}
+
 .product-image {
   width: 100%;
 }

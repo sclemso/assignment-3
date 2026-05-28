@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>Product Detail</title>
     <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/detail.css" />
 </head>
 <body>
     <header> 
@@ -32,13 +33,27 @@
     </header>
 
     <main class="detail-page">
-        <a href="/pages/shop.html" class="back-link">← Back to shop</a>
         <div class="detail-layout">
-            <img id="detail-img" src="" alt="" class="detail-img" />
-            <div class="detail-info">
-                <h1 id="detail-title"></h1>
-                <p id="detail-price"></p>
-                <button class="add-to-cart-btn">Add to cart</button>
+            <div class="detail-left">
+                <img id="detail-img" src="" alt="" class="detail-img" />
+            </div>
+            <div class="detail-right">
+                <div class="detail-top-row">
+                    <h1 id="detail-title"></h1>
+                </div>
+                <div class="detail-meta">
+                    <span id="detail-price"></span>
+                    <span id="detail-serves"></span>
+                </div>
+                <div class="ordering">
+                    <div class="quantity-selector">
+                        <button class="qty-btn" onclick="changeQty(-1)">−</button>
+                        <span id="qty-display">1</span>
+                        <button class="qty-btn" onclick="changeQty(1)">+</button>
+                    </div>
+                    <button class="order-btn" id="order-btn"></button>
+                </div>
+                <p id="detail-desc"></p>
             </div>
         </div>
     </main>
