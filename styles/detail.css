@@ -112,4 +112,78 @@ main {
     min-width: 24px;
     text-align: center;
 }
-    
+
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.popup-overlay.show {
+    display: flex;
+}
+
+.popup-box {
+    background: #FAF6EE;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.popup-box h2 {
+    color: #4A5D3A;
+    margin: 0;
+}
+
+.popup-box p {
+    color: #9BA083;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #9BA083;
+}
+
+.date-input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #9BA083;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: transparent;
+    color: #3C2A1A;
+    box-sizing: border-box;
+}
+
+.confirm-btn {
+    background: #3C2A1A;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.05rem;
+}
+
+.confirm-btn:hover {
+    background: #C4956A;
+}

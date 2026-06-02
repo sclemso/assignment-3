@@ -80,3 +80,35 @@ if (product.cake) {
 } else {
     orderBtn.textContent = "Add to Cart";
 }
+
+
+function openPopup() {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    document.getElementById("pickup-date").min = tomorrow.toISOString().split("T")[0];
+    document.getElementById("order-popup").classList.add("show");
+}
+
+function closePopup() {
+    document.getElementById("order-popup").classList.remove("show");
+}
+
+function confirmOrder() {
+    const date = document.getElementById("pickup-date").value;
+    if (!date) {
+        alert("Please select a date first.");
+        return;
+    }
+    const formatted = new Date(date).toLocaleDateString("en-AU", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+    });
+    alert(`Order placed for ${formatted}!`);
+    closePopup();
+}
+
+document.getElementById("order-popup").addEventListener("click", function(e) {
+    if (e.target === this) closePopup();
+});
