@@ -232,6 +232,7 @@ function renderCartPage() {
             </div>
         </div>
     </div>
+    
 `).join("");
 
     // calculate total
@@ -239,6 +240,15 @@ function renderCartPage() {
         const price = parseFloat(item.price.replace("$", ""));
         return sum + price * item.quantity;
     }, 0);
+
+    summaryEl.innerHTML = `
+        <h2>Order Summary</h2>
+        <div class="summary-row summary-total">
+            <span>Total</span>
+            <span>$${total.toFixed(2)}</span>
+        </div>
+        <button class="checkout-btn" onclick="location.href='/pages/checkout.html'">Proceed to Checkout</button>
+    `;
 }
 
 function removeFromCart(index) {
