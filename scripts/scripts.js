@@ -1,3 +1,36 @@
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function saveCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function addToCart(product, quantity, pickupDate = null) {
+    const existing = cart.find(item => item.id === product.id);
+    if (existing && !pickupDate) {
+        existing.quantity += quantity;
+    } else {
+        cart.push({
+            id: product.id,
+            title: product.title,
+            price: product.price,
+            img: product.img,
+            quantity: quantity,
+            pickupDate: pickupDate
+        });
+    }
+    saveCart();
+    updateBadge();
+}
+
+function updateBadge() {
+    const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const badge = document.getElementById("cart-badge");
+    if (badge) {
+        badge.textContent = total;
+        badge.style.display = total > 0 ? "flex" : "none";
+    }
+}
+
 const PRODUCTS = [
   { id: "1", 
     title: "Natural Rainbow",         
@@ -43,44 +76,12 @@ const PRODUCTS = [
         cake: false },
     ];
 
-  
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get("id");
-
-    const product = PRODUCTS.find(p => p.id === id);
-
-    if (product) {
-      document.getElementById("detail-img").src   = product.img;
-      document.getElementById("detail-img").alt   = product.title;
-      document.getElementById("detail-title").textContent = product.title;
-      document.getElementById("detail-price").textContent = product.price;
-      document.title = product.title;
-      const servesEl = document.getElementById("detail-serves");
-  if (product.serve) {
-    servesEl.textContent = product.serve;
-    servesEl.style.display = "block";
-  } else {
-    servesEl.style.display = "none";
-  }
-    } else {
-      document.querySelector(".detail-layout").innerHTML = "<p>Product not found.</p>";
-    }
-
-
-let quantity = 1;
+    let quantity = 1;
 
 function changeQty(amount) {
     quantity = Math.max(1, quantity + amount);
     document.getElementById("qty-display").textContent = quantity;
 }
-
-const orderBtn = document.getElementById("order-btn");
-if (product.cake) {
-    orderBtn.textContent = "Place Order";
-} else {
-    orderBtn.textContent = "Add to Cart";
-}
-
 
 function openPopup() {
     const tomorrow = new Date();
@@ -105,10 +106,98 @@ function confirmOrder() {
         month: "long",
         year: "numeric"
     });
-    alert(`Order placed for ${formatted}!`);
+    addToCart(product, quantity, formatted);
     closePopup();
+    alert(`${product.title} added! Pickup: ${formatted}`);
 }
 
-document.getElementById("order-popup").addEventListener("click", function(e) {
-    if (e.target === this) closePopup();
-});
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+const product = PRODUCTS.find(p => p.id === id);
+
+
+
+if (document.getElementById("detail-img")) {
+    // only runs on product-detail.html
+    if (product) {
+        document.getElementById("detail-img").src = product.img;
+        document.getElementById("detail-img").alt = product.title;
+        document.getElementById("detail-title").textContent = product.title;
+        document.getElementById("detail-price").textContent = product.price;
+        document.title = product.title;
+
+        const servesEl = document.getElementById("detail-serves");
+        if (product.serve) {
+            servesEl.textContent = product.serve;
+            servesEl.style.display = "block";
+        } else {
+            servesEl.style.display = "none";
+        }
+
+        const orderBtn = document.getElementById("order-btn");
+        if (product.cake) {
+            orderBtn.textContent = "Place Order";
+            orderBtn.onclick = openPopup;
+        } else {
+            orderBtn.textContent = "Add to Cart";
+            orderBtn.onclick = () => {
+                addToCart(product, quantity);
+                alert(`${product.title} added to cart!`);
+            };
+        }
+    } else {
+        document.querySelector(".detail-layout").innerHTML = "<p>Product not found.</p>";
+    }
+}
+
+const popupEl = document.getElementById("order-popup");
+if (popupEl) {
+    popupEl.addEventListener("click", function(e) {
+        if (e.target === this) closePopup();
+    });
+}
+
+
+updateBadge();
+
+function openDrawer() {
+    renderDrawer();
+    document.getElementById("cart-drawer").classList.add("open");
+    document.getElementById("cart-overlay").classList.add("open");
+}
+
+function closeDrawer() {
+    document.getElementById("cart-drawer").classList.remove("open");
+    document.getElementById("cart-overlay").classList.remove("open");
+}
+
+function renderDrawer() {
+    const el = document.getElementById("cart-drawer-items");
+    if (cart.length === 0) {
+        el.innerHTML = '<p class="drawer-empty">Your cart is empty.</p>';
+        return;
+    }
+    el.innerHTML = cart.map(item => `
+        <div class="drawer-item">
+            <img src="${item.img}" alt="${item.title}" />
+            <div class="drawer-item-info">
+                <div class="drawer-item-title">${item.title}</div>
+                <div class="drawer-item-sub">
+                    Qty: ${item.quantity}
+                    ${item.pickupDate ? `· Pickup: ${item.pickupDate}` : ""}
+                </div>
+            </div>
+            <div class="drawer-item-price">${item.price}</div>
+        </div>
+    `).join("");
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function() {
+        updateBadge();
+        renderCartPage();
+    });
+} else {
+    updateBadge();
+    renderCartPage();
+}
