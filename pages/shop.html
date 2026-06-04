@@ -5,6 +5,8 @@
     <title>Home Page</title>
     <link rel="stylesheet" href="/styles/main.css" />
     <link rel="stylesheet" href="/styles/shop.css" />
+    <link rel="stylesheet" href="/styles/colors.css" />
+    <link rel="stylesheet" href="/styles/typography.css" />
 </head>
 <body>
     <header> 
@@ -55,65 +57,65 @@
 
 
         <h1>Jars</h1>
-            <div class="product-grid">
-                <div class="product-card" onclick="location.href='/pages/product-detail.html?id=3'">
-                    <img src="/assets/almond.jpg" alt="Almond Butter" class="product-image">
-                    <div class="product-info">
-                        <h2 class="product-title">Almond Butter (460g)</h2>
-                        <p class="product-price">$13.00</p>
-                    </div>
-                </div>
-                <div class="product-card" onclick="location.href='/pages/product-detail.html?id=4'">
-                    <img src="/assets/strawberry.jpg" alt="Strawberry Jam" class="product-image">
-                    <div class="product-info">
-                        <h2 class="product-title">Strawberry Jam (460g)</h2>
-                        <p class="product-price">$13.00</p>
-                    </div>
-                </div>
-                <div class="product-card" onclick="location.href='/pages/product-detail.html?id=5'">
-                    <img src="/assets/peanut.jpg" alt="Peanut Butter" class="product-image">
-                    <div class="product-info">
-                        <h2 class="product-title">Peanut Butter (460g)</h2>
-                        <p class="product-price">$13.00</p>
-                    </div>
+        <div class="product-grid">
+            <div class="product-card" onclick="location.href='/pages/product-detail.html?id=3'">
+                <img src="/assets/almond.jpg" alt="Almond Butter" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-title">Almond Butter (460g)</h2>
+                    <p class="product-price">$13.00</p>
                 </div>
             </div>
+            <div class="product-card" onclick="location.href='/pages/product-detail.html?id=4'">
+                <img src="/assets/strawberry.jpg" alt="Strawberry Jam" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-title">Strawberry Jam (460g)</h2>
+                    <p class="product-price">$13.00</p>
+                </div>
+            </div>
+            <div class="product-card" onclick="location.href='/pages/product-detail.html?id=5'">
+                <img src="/assets/peanut.jpg" alt="Peanut Butter" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-title">Peanut Butter (460g)</h2>
+                    <p class="product-price">$13.00</p>
+                </div>
+            </div>
+        </div>
 
-            <h1>Merchandise</h1>
-            <div class="product-grid">
-                <div class="product-card" onclick="location.href='/pages/product-detail.html?id=6'">
-                    <img src="/assets/voucher.jpg" alt="Paper Gift Voucher" class="product-image">
-                    <div class="product-info">
-                        <h2 class="product-title">Paper Gift Voucher</h2>
-                        <p class="product-price">$20.00</p>
-                    </div>
-                </div>
-                <div class="product-card" onclick="location.href='/pages/product-detail.html?id=7'">
-                    <img src="/assets/cap.jpg" alt="Embroided Cap" class="product-image">
-                    <div class="product-info">
-                        <h2 class="product-title">'Natural' Embroided Cap</h2>
-                        <p class="product-price">$35.00</p>
-                    </div>
-                </div>
-                <div class="product-card" onclick="location.href='/pages/product-detail.html?id=8'">
-                    <img src="/assets/hat.jpg" alt="Kid's Melon Brim Hat" class="product-image">
-                    <div class="product-info">
-                        <h2 class="product-title">Kid's Melon Brim Hat</h2>
-                        <p class="product-price">$40.00</p>
-                    </div>
+        <h1>Merchandise</h1>
+        <div class="product-grid">
+            <div class="product-card" onclick="location.href='/pages/product-detail.html?id=6'">
+                <img src="/assets/voucher.jpg" alt="Paper Gift Voucher" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-title">Paper Gift Voucher</h2>
+                    <p class="product-price">$20.00</p>
                 </div>
             </div>
+            <div class="product-card" onclick="location.href='/pages/product-detail.html?id=7'">
+                <img src="/assets/cap.jpg" alt="Embroided Cap" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-title">'Natural' Embroided Cap</h2>                        <p class="product-price">$35.00</p>
+                </div>
+            </div>
+            <div class="product-card" onclick="location.href='/pages/product-detail.html?id=8'">
+                <img src="/assets/hat.jpg" alt="Kid's Melon Brim Hat" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-title">Kid's Melon Brim Hat</h2>
+                    <p class="product-price">$40.00</p>
+                </div>
+            </div>
+        </div>
     <div id="cart-drawer" class="cart-drawer">
-    <div class="cart-drawer-header">
-        <h2>Your Cart</h2>
-        <button class="drawer-close" onclick="closeDrawer()">✕</button>
+        <div class="cart-drawer-header">
+            <h2>Your Cart</h2>
+            <button class="drawer-close" onclick="closeDrawer()">✕</button>
+        </div>
+        <div id="cart-drawer-items" class="cart-drawer-items"></div>
+        <div class="cart-drawer-footer">
+            <a href="/pages/cart.html" class="view-cart-btn">View Cart</a>
+        </div>
     </div>
-    <div id="cart-drawer-items" class="cart-drawer-items"></div>
-    <div class="cart-drawer-footer">
-        <a href="/pages/cart.html" class="view-cart-btn">View Cart</a>
-    </div>
-</div>
-<div id="cart-overlay" class="cart-overlay" onclick="closeDrawer()"></div>
-    <script src="/scripts/scripts.js"></script>
+    <div id="cart-overlay" class="cart-overlay" onclick="closeDrawer()"></div>
     </main>
+    <script src="/scripts/scripts.js"></script>
 </body>
+</html>

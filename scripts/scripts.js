@@ -201,3 +201,56 @@ if (document.readyState === "loading") {
     updateBadge();
     renderCartPage();
 }
+
+function renderCartPage() {
+    const itemsEl = document.getElementById("cart-items");
+    const summaryEl = document.getElementById("cart-summary");
+    if (!itemsEl) return; // not on cart page
+
+    if (cart.length === 0) {
+        itemsEl.innerHTML = '<p class="cart-empty">Your cart is empty. <a href="/pages/shop.html">Continue shopping</a></p>';
+        summaryEl.innerHTML = "";
+        return;
+    }
+
+    itemsEl.innerHTML = cart.map((item, index) => `
+    <div class="cart-item">
+        <img src="${item.img}" alt="${item.title}" />
+        <div class="cart-item-right">
+            <div class="cart-item-title">${item.title}</div>
+            <div class="cart-item-price">${item.price}</div>
+            ${item.pickupDate ? `<div class="cart-item-sub">Pickup: ${item.pickupDate}</div>` : ""}
+            <div class="cart-item-actions">
+              <div class="quantity-selector">
+                  <button class="qty-btn" onclick="changeCartQty(${index}, -1)">−</button>
+                  <span>${item.quantity}</span>
+                  <button class="qty-btn" onclick="changeCartQty(${index}, 1)">+</button>
+              </div>
+              <button class="cart-remove-btn" onclick="removeFromCart(${index})">
+                  <img src="/assets/remove.svg" alt="Remove" />
+              </button>
+            </div>
+        </div>
+    </div>
+`).join("");
+
+    // calculate total
+    const total = cart.reduce((sum, item) => {
+        const price = parseFloat(item.price.replace("$", ""));
+        return sum + price * item.quantity;
+    }, 0);
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    saveCart();
+    updateBadge();
+    renderCartPage();
+}
+
+function changeCartQty(index, amount) {
+    cart[index].quantity = Math.max(1, cart[index].quantity + amount);
+    saveCart();
+    updateBadge();
+    renderCartPage();
+}

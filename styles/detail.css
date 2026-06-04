@@ -1,5 +1,5 @@
 main h1 {
-    color: #4A5D3A;
+    color: var(--color-green-dark);
     font-size: 3.5rem;
     margin: 0.5rem 0 0 0;
     padding: 0;
@@ -40,16 +40,16 @@ main h1 {
 #detail-price {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #4A5D3A;
+    color: var(--color-green-dark);
 }
 
 #detail-serves {
     font-size: 1.5rem;
-    color: #9BA083;
+    color: var(--color-green-light);
 }
 
 .order-btn {
-    background: #3C2A1A;
+    background: var(--color-brown-dark);
     color: white;
     border: none;
     width: 20rem;
@@ -64,7 +64,7 @@ main h1 {
 }
 
 .order-btn:hover {
-    background: #C4956A;
+    background: var(--color-brown-light);
 }
 
 main {
@@ -82,7 +82,7 @@ main {
     align-items: center;
     gap: 16px;
     display: flex;
-    background-color: #9BA083;
+    background-color: var(--color-green-light);
     padding-left: 14px;
     padding-right: 14px;
     height: 2.75rem;
@@ -140,12 +140,12 @@ main {
 }
 
 .popup-box h2 {
-    color: #4A5D3A;
+    color: var(--color-green-dark);
     margin: 0;
 }
 
 .popup-box p {
-    color: #9BA083;
+    color: var(--color-green-light);
     margin: 0;
     font-size: 0.9rem;
 }
@@ -158,22 +158,22 @@ main {
     border: none;
     font-size: 1.2rem;
     cursor: pointer;
-    color: #9BA083;
+    color: var(--color-green-light);
 }
 
 .date-input {
     width: 100%;
     padding: 10px 14px;
-    border: 1px solid #9BA083;
+    border: 1px solid var(--color-green-light);
     border-radius: 8px;
     font-size: 1rem;
     background: transparent;
-    color: #3C2A1A;
+    color: var(--color-brown-dark);
     box-sizing: border-box;
 }
 
 .confirm-btn {
-    background: #3C2A1A;
+    background: var(--color-brown-dark);
     color: white;
     border: none;
     border-radius: 10px;
@@ -185,5 +185,5 @@ main {
 }
 
 .confirm-btn:hover {
-    background: #C4956A;
+    background: var(--color-brown-light);
 }

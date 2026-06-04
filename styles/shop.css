@@ -1,10 +1,10 @@
 
 main h1 {
-    color: #4A5D3A;
+    color: var(--color-green-dark);
 }
 
 .product-price {
-    color: #3C2A1A;
+    color: var(--color-brown-dark);
 }
 
 .product-info {
@@ -13,7 +13,7 @@ main h1 {
 }
 
 .product-title {
-    color: #3C2A1A;
+    color: var(--color-brown-dark);
 }
 
 .product-card {
