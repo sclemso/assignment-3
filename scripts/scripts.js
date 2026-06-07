@@ -264,3 +264,22 @@ function changeCartQty(index, amount) {
     updateBadge();
     renderCartPage();
 }
+
+function renderCheckoutTotal() {
+    const el = document.getElementById("checkout-total");
+    if (!el) return;
+    
+    const total = cart.reduce((sum, item) => {
+        const price = parseFloat(item.price.replace("$", ""));
+        return sum + price * item.quantity;
+    }, 0);
+
+    el.innerHTML = `
+        <span>Total</span>
+        <span>$${total.toFixed(2)}</span>
+    `;
+}
+
+updateBadge();
+renderCartPage();
+renderCheckoutTotal();

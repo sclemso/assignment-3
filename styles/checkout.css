@@ -1,4 +1,132 @@
-nav h1 {
-    font-size: 1.5rem;
+nav a {
+    font-size: 1rem;
     color: var(--color-brown-dark);
+}
+
+nav a:hover {
+    cursor: pointer;
+}
+
+nav {
+    align-items: center;
+    justify-content: left;
+    text-decoration: underline;
+    font-family: "Shrimp";
+    padding-left: 1rem;
+}
+
+main h1 {
+    color: var(--color-green-dark);
+}
+
+main {
+    margin: 2rem 2rem;
+    font-family: "Shrimp";
+}
+
+.checkout-page {
+    margin: 2rem;
+}
+
+.checkout-layout {
+    display: flex;
+    gap: 10rem;
+    align-items: flex-start;
+}
+
+.checkout-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.checkout-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.checkout-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.checkout-section label {
+    font-family: 'Hedvig';
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.checkout-section h2 {
+    color: var(--color-green-dark);
+    margin: 0 0 0.5rem 0;
+    font-size: 1.8rem;
+}
+
+.checkout-label {
+    font-size: 0.9rem;
+    color: var(--color-brown-dark);
+    margin: 0rem;
+}
+
+.field-row {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.field-row > * {
+    flex: 1;
+}
+
+.checkout-input {
+    background: var(--color-brown-light);
+    border: none;
+    border-radius: 10px;
+    padding: 14px 14px;
+    font-size: 1rem;
+    font-family: 'Shrimp';
+    color: var(--color-brown-dark);
+    width: 100%;
+    box-sizing: border-box;
+    height: 2.2rem;
+}
+
+.checkout-input::placeholder {
+    color: var(--color-brown-dark);
+    opacity: 0.8;
+}
+
+.checkout-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px var(--color-brown-dark);
+}
+
+.place-order-btn {
+    background: var(--color-brown-dark);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Shrimp', sans-serif;
+    cursor: pointer;
+    letter-spacing: 0.05rem;
+    width: 100%;
+}
+
+.place-order-btn:hover {
+    background: var(--color-brown-light);
+}
+
+.checkout-input:valid {
+    background: var(--color-green-light);
+    color: white;
 }

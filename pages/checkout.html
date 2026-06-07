@@ -11,12 +11,88 @@
 <body>
     <header> 
         <nav>
-            <h1> Return to Cart </h1>
+            <a href="/pages/cart.html">← RETURN TO CART</a>
         </nav>
     </header>
     <main>
-        <h1>Checkout</h1>
-        
+        <div class="checkout-layout">
+
+            <!-- LEFT SIDE -->
+            <div class="checkout-left">
+                <section class="checkout-section">
+                    <h2>Contact Information</h2>
+                    <div class="field-row">
+                        <div class="field-group">
+                            <label class="checkout-label">*First Name</label>
+                            <input class="checkout-input" type="text" placeholder="John" required minlength="1"/>
+                        </div>
+                        <div class="field-group">
+                            <label class="checkout-label">*Last Name</label>
+                            <input class="checkout-input" type="text" placeholder="Smith" required minlength="1"/>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label class="checkout-label">*Email</label>
+                        <input class="checkout-input full" type="email" placeholder="johnsmith@example.com" required/>
+                    </div>
+                    <div class="field-group">
+                        <label class="checkout-label">*Phone</label>
+                        <input class="checkout-input full" type="tel" placeholder="0123456789" pattern="[0-9]{10}" required minlength="10" maxlength="10" />
+                    </div>
+                </section>
+
+                <section class="checkout-section">
+                    <h2>Billing Information</h2>
+                    <div class="field-group">
+                        <label class="checkout-label">*Address</label>
+                        <input class="checkout-input full" type="text" placeholder="123 Street Name" required minlength="1" />
+                    </div>
+                    <div class="field-row">
+                        <div class="field-group">
+                            <label class="checkout-label">*City</label>
+                            <input class="checkout-input" type="text" placeholder="City" required minlength="1" />
+                        </div>
+                        <div class="field-group">
+                            <label class="checkout-label">*Postcode</label>
+                            <input class="checkout-input" type="text" placeholder="XXXX" pattern="\d{4}" required minlength="4" maxlength="4"/>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label class="checkout-label">*State</label>
+                        <input class="checkout-input full" type="text" placeholder="XXX" pattern="[A-Z]{3}" required minlength="3" maxlength="3"/>
+                    </div>
+                </section>
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="checkout-right">
+                <section class="checkout-section">
+                    <h2>Payment Details</h2>
+                    <div class="field-group">
+                        <label class="checkout-label">Card Number</label>
+                        <input class="checkout-input full" type="text" placeholder="0123 4567 8910 1112" pattern="\d{4} \d{4} \d{4} \d{4}" required minlength="19"/>
+                    </div>
+                    <div class="field-row">
+                        <div class="field-group">
+                            <label class="checkout-label">Expiry Date</label>
+                            <input class="checkout-input" type="text" placeholder="MM / YY" pattern="\d{2}/\d{2}" maxlength="5" required minlength="5"/>
+                        </div>
+                        <div class="field-group">
+                            <label class="checkout-label">Security Code</label>
+                            <input class="checkout-input" type="text" placeholder="CVC" pattern="\d{3}" required minlength="3" maxlength="3"/>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label class="checkout-label">Name on Card</label>
+                        <input class="checkout-input full" type="text" placeholder="J SMITH" required minlength="1"/>
+                    </div>
+                </section>
+               
+                <div id="checkout-total" class="summary-row summary-total"></div>
+                <button class="place-order-btn">Place Order</button>
+            </div>
+
+        </div>
     </main>
     <script src="/scripts/scripts.js"></script>
 </body>
