@@ -280,6 +280,34 @@ function renderCheckoutTotal() {
     `;
 }
 
+function placeOrder() {
+    const firstName = document.querySelector("input[placeholder='*First Name']")?.value;
+    const email = document.querySelector("input[type='email']")?.value;
+
+    localStorage.setItem("checkout-name", firstName);
+    localStorage.setItem("checkout-email", email);
+    location.href = "/pages/confirm.html";
+}
+
+function renderConfirmationPage() {
+    const titleEl = document.getElementById("confirmation-title");
+    const emailEl = document.getElementById("confirmation-email");
+    if (!titleEl) return;
+
+    const name = localStorage.getItem("checkout-name") || "";
+    const email = localStorage.getItem("checkout-email") || "";
+
+    titleEl.textContent = `Thank you${name ? ", " + name : ""}!`;
+    if (email) {
+        emailEl.textContent = `An order confirmation has been sent to your inbox: ${email}`;
+    }
+
+    cart = [];
+    saveCart();
+    updateBadge();
+}
+
 updateBadge();
 renderCartPage();
 renderCheckoutTotal();
+renderConfirmationPage();

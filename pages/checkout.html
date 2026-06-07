@@ -70,7 +70,7 @@
                     <h2>Payment Details</h2>
                     <div class="field-group">
                         <label class="checkout-label">Card Number</label>
-                        <input class="checkout-input full" type="text" placeholder="0123 4567 8910 1112" pattern="\d{4} \d{4} \d{4} \d{4}" required minlength="19"/>
+                        <input class="checkout-input full" type="text" placeholder="0123 4567 8910 1112" pattern="\d{4}\d{4}\d{4}\d{4}" required minlength="16"/>
                     </div>
                     <div class="field-row">
                         <div class="field-group">
@@ -89,7 +89,7 @@
                 </section>
                
                 <div id="checkout-total" class="summary-row summary-total"></div>
-                <button class="place-order-btn">Place Order</button>
+                <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
             </div>
 
         </div>

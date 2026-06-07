@@ -54,10 +54,6 @@ main {
     gap: 0.5rem;
 }
 
-.checkout-section label {
-    font-family: 'Hedvig';
-}
-
 .field-group {
     display: flex;
     flex-direction: column;
@@ -71,9 +67,11 @@ main {
 }
 
 .checkout-label {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     color: var(--color-brown-dark);
     margin: 0rem;
+    font-family: 'Hedvig', serif;
+    letter-spacing: -2%;
 }
 
 .field-row {
@@ -90,8 +88,8 @@ main {
     border: none;
     border-radius: 10px;
     padding: 14px 14px;
-    font-size: 1rem;
-    font-family: 'Shrimp';
+    font-size: 1.2rem;
+    font-family: 'Hedvig', serif;
     color: var(--color-brown-dark);
     width: 100%;
     box-sizing: border-box;
@@ -100,7 +98,8 @@ main {
 
 .checkout-input::placeholder {
     color: var(--color-brown-dark);
-    opacity: 0.8;
+    opacity: 0.56;
+    letter-spacing: -2%;
 }
 
 .checkout-input:focus {
