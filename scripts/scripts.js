@@ -2,6 +2,7 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function saveCart() {
     localStorage.setItem("cart", JSON.stringify(cart));
+    updateBadge();
 }
 
 function addToCart(product, quantity, pickupDate = null) {
@@ -19,7 +20,6 @@ function addToCart(product, quantity, pickupDate = null) {
         });
     }
     saveCart();
-    updateBadge();
 }
 
 function updateBadge() {
@@ -77,6 +77,12 @@ const PRODUCTS = [
     ];
 
     let quantity = 1;
+
+function getCartTotal() {
+    return cart.reduce((sum, item) => {
+        return sum + parseFloat(item.price.replace("$", "")) * item.quantity;
+    }, 0);
+}
 
 function changeQty(amount) {
     quantity = Math.max(1, quantity + amount);
@@ -157,9 +163,6 @@ if (popupEl) {
     });
 }
 
-
-updateBadge();
-
 function openDrawer() {
     renderDrawer();
     document.getElementById("cart-drawer").classList.add("open");
@@ -190,16 +193,6 @@ function renderDrawer() {
             <div class="drawer-item-price">${item.price}</div>
         </div>
     `).join("");
-}
-
-if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", function() {
-        updateBadge();
-        renderCartPage();
-    });
-} else {
-    updateBadge();
-    renderCartPage();
 }
 
 function renderCartPage() {
@@ -235,11 +228,7 @@ function renderCartPage() {
     
 `).join("");
 
-    // calculate total
-    const total = cart.reduce((sum, item) => {
-        const price = parseFloat(item.price.replace("$", ""));
-        return sum + price * item.quantity;
-    }, 0);
+    const total = getCartTotal();
 
     summaryEl.innerHTML = `
         <h2>Order Summary</h2>
@@ -254,14 +243,12 @@ function renderCartPage() {
 function removeFromCart(index) {
     cart.splice(index, 1);
     saveCart();
-    updateBadge();
     renderCartPage();
 }
 
 function changeCartQty(index, amount) {
     cart[index].quantity = Math.max(1, cart[index].quantity + amount);
     saveCart();
-    updateBadge();
     renderCartPage();
 }
 
@@ -269,15 +256,11 @@ function renderCheckoutTotal() {
     const el = document.getElementById("checkout-total");
     if (!el) return;
     
-    const total = cart.reduce((sum, item) => {
-        const price = parseFloat(item.price.replace("$", ""));
-        return sum + price * item.quantity;
-    }, 0);
-
     el.innerHTML = `
-        <span>Total</span>
-        <span>$${total.toFixed(2)}</span>
-    `;
+      <span>Total</span>
+      <span>$${getCartTotal().toFixed(2)}</span>
+`;
+
 }
 
 function placeOrder() {
