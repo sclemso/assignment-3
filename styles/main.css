@@ -18,6 +18,11 @@ nav {
     background-color: var(--color-brown-light);
 }
 
+nav h1 {
+    font-family: 'Shrimp';
+    color: var(--color-brown-dark);
+}
+
 nav img {
     height: 2rem;
     width: 2rem;
@@ -78,13 +83,8 @@ nav img {
     margin: 0;
 }
 
-.subnavbtn:hover {
-    background-color: #8A9F7B;
-
-}
-
 .navbar a:hover, .subnav:hover .subnavbtn {
-    background-color: #8A9F7B;
+    background-color: var(--color-background);
 }
 
 .subnav-content {
@@ -92,7 +92,7 @@ nav img {
     display: none;
     position: absolute;
     left: 0;
-    background-color: #8A9F7B;
+    background-color: var(--color-brown-dark);
     width: 100%;
     z-index: 1;
     height: 2.75rem;
@@ -100,18 +100,18 @@ nav img {
 
 .subnav-content a {
     float: left;
-    color: white;
+    color: var(--color-background);
     text-decoration: none;
     display: flex;
     align-items: center;
     padding-left: 1.2rem;
     padding-right: 1.2rem;
     height: 100%;
-    background-color:  #8A9F7B;
+    background-color:  var(--color-brown-dark);
 }
 
 .subnav-content a:hover {
-    background-color: #eee;
+    background-color: var(--color-background);
     color: black;
     display: flex;
     align-items: center;
@@ -353,6 +353,7 @@ nav img {
     font-size: 0.85rem;
     color: var(--color-brown-dark);
     font-weight: 600;
+    font-family: 'Hedvig', sans-serif;
 }
 
 .scoop-form {
