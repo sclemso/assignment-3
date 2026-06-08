@@ -35,14 +35,13 @@ nav img {
 
 .homeimage {
     position: relative;
-
     font-size: 3rem;
     height: 30rem;
     overflow-y: hidden;
 }
 
 .heading-overlay {
-    color: black;
+    color: var(--color-brown-dark);
     position: absolute;
     top: 5%;
     left: 58%;
@@ -50,7 +49,7 @@ nav img {
 }
 
 .heading-overlay2 {
-    color: black;
+    color: var(--color-brown-dark);
     position: absolute;
     top: 31%;
     left: 60%;
@@ -62,6 +61,7 @@ nav img {
     width: 100%;
     object-fit: cover;
     transform: translateY(-18rem);
+        opacity: 0.8;
 }
 
 .subnav {
@@ -147,6 +147,7 @@ nav img {
     height: 27rem;
     border-radius: 15px;
     margin: 1.1rem auto;
+    cursor: pointer;
  }
 
  .content-box img {
@@ -154,6 +155,24 @@ nav img {
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: filter 0.3s ease;
+}
+
+.content-box:hover img {
+    filter: brightness(0.5);
+}
+
+.content-overlay {
+    color: var(--color-background);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.content-box:hover .content-overlay {
+    opacity: 1;
 }
 
 #mangoes {
@@ -181,76 +200,30 @@ nav img {
 
 #mangoes-title {
     position: absolute;
-    color: white;
-    text-align: right;
+    text-align: left;
     top: 30%;
-    left: 40%;
+    left: 5%;
     font-size: 3rem;
 }
 
 #serving-title {
     position: absolute;
-    color: white;
     text-align: left;
     top: 30%;
     left: 10%;
     font-size: 3rem;
 }
 
-#serving-button {
-    background-color: var(--color-brown-light);
-    color: var(--color-brown-dark);
-    font-size: 1rem;
-    line-height: 1.5rem;
-    width: 10rem;
-    height: 5rem;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top: 65%;
-    left: 30%;
-    transform: translateX(-50%);
-    border-radius: 10px;
-    transition: all 0.3s ease-in-out;
-}
-
-#serving-button:hover {
-    background-color: #8A9F7B;
-}
-
 #everyone-title {
     position: absolute;
-    color: white;
     text-align: right;
-    top: 20%;
+    top: 30%;
     left: 70%;
     font-size: 3rem;
 }
 
-#everyone-button {
-    background-color: var(--color-brown-light);
-    color: var(--color-brown-dark);
-    font-size: 1rem;
-    line-height: 1.5rem;
-    width: 10rem;
-    height: 3rem;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top: 55%;
-    left: 90%;
-    transform: translateX(-50%);
-    border-radius: 10px;
-    transition: all 0.3s ease-in-out;
-}
-
-#everyone-button:hover {
-    background-color: #8A9F7B;
-}
-
 #hazel-title {
     position: absolute;
-    color: white;
     text-align: left;
     top: 30%;
     left: 5%;
@@ -259,7 +232,6 @@ nav img {
 
 #pour-title {
     position: absolute;
-    color: white;
     text-align: right;
     top: 10%;
     left: 57%;
