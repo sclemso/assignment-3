@@ -121,24 +121,23 @@ nav img {
     display: flex;
 }
 
-.home-container {
-    display: absolute;
-    overflow: hidden;
-    height: 4rem;
-    padding-left: 5rem;
-    padding-right: 5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--color-brown-light);
-    margin-bottom: 2rem;
+.shop-link {
+    display: block;
+    text-align: center;
+    background: var(--color-brown-dark);
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Shrimp', sans-serif;
+    padding: 12px;
+    transition: letter-spacing 0.8s ease;
 }
 
-.home-container a {
-    font-size: 2rem;
-    text-decoration: none;
-    color: var(--color-green-dark);
- }
+.shop-link:hover {
+    letter-spacing: 1rem;
+    cursor: pointer;
+}
 
  .content-box {
     position: relative;
@@ -255,7 +254,6 @@ nav img {
 
 .story-scoop p {
     font-size: 1rem;
-    line-height: 1.6;
     margin: 0;
     font-family: 'Hedvig';
 }
