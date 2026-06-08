@@ -37,7 +37,7 @@
                     </div>
                     <div class="field-group">
                         <label class="checkout-label">*Phone</label>
-                        <input class="checkout-input full" type="tel" placeholder="0123456789" pattern="[0-9]{10}" required minlength="10" maxlength="10" />
+                        <input class="checkout-input phone-input" type="tel" placeholder="04XX XXX XXX" maxlength="12" pattern="\d{4} \d{3} \d{3}" required />
                     </div>
                 </section>
 
@@ -70,12 +70,12 @@
                     <h2>Payment Details</h2>
                     <div class="field-group">
                         <label class="checkout-label">Card Number</label>
-                        <input class="checkout-input full" type="text" placeholder="0123 4567 8910 1112" pattern="\d{4}\d{4}\d{4}\d{4}" required minlength="16"/>
+                        <input class="checkout-input card-input" type="text" placeholder="0123 4567 8910 1112" pattern="\d{4} \d{4} \d{4} \d{4}" required maxlength="19"/>
                     </div>
                     <div class="field-row">
                         <div class="field-group">
                             <label class="checkout-label">Expiry Date</label>
-                            <input class="checkout-input" type="text" placeholder="MM / YY" pattern="\d{2}/\d{2}" maxlength="5" required minlength="5"/>
+                            <input class="checkout-input expiry-input" type="text" placeholder="MM / YY" maxlength="5" pattern="\d{2}/\d{2}" required />
                         </div>
                         <div class="field-group">
                             <label class="checkout-label">Security Code</label>

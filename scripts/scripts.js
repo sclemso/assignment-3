@@ -118,11 +118,49 @@ function confirmOrder() {
     alert(`${product.title} added! Pickup: ${formatted}`);
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    // card number
+    const cardInput = document.querySelector(".card-input");
+    if (cardInput) {
+        cardInput.addEventListener("input", function() {
+            let value = this.value.replace(/\D/g, "");
+            value = value.slice(0, 16);
+            value = value.match(/.{1,4}/g)?.join(" ") || value;
+            this.value = value;
+        });
+    }
+
+    // phone number
+    const phoneInput = document.querySelector(".phone-input");
+    if (phoneInput) {
+        phoneInput.addEventListener("input", function() {
+            let value = this.value.replace(/\D/g, "");
+            value = value.slice(0, 10);
+            if (value.length > 4 && value.length <= 7) {
+                value = value.slice(0, 4) + " " + value.slice(4);
+            } else if (value.length > 7) {
+                value = value.slice(0, 4) + " " + value.slice(4, 7) + " " + value.slice(7);
+            }
+            this.value = value;
+        });
+    }
+
+    // expiry date
+    const expiryInput = document.querySelector(".expiry-input");
+    if (expiryInput) {
+        expiryInput.addEventListener("input", function() {
+            let value = this.value.replace(/\D/g, "");
+            if (value.length >= 2) {
+                value = value.slice(0, 2) + "/" + value.slice(2, 4);
+            }
+            this.value = value;
+        });
+    }
+});
+
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 const product = PRODUCTS.find(p => p.id === id);
-
-
 
 if (document.getElementById("detail-img")) {
     // only runs on product-detail.html
@@ -258,7 +296,7 @@ function renderCheckoutTotal() {
     if (!el) return;
     
     el.innerHTML = `
-      <span>Total</span>
+      <span>Total:</span>
       <span>$${getCartTotal().toFixed(2)}</span>
 `;
 
