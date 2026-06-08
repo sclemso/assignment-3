@@ -470,9 +470,29 @@ footer {
 }
 
 .cart-drawer-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     margin-top: 1.5rem;
     border-top: 1px solid var(--color-brown-dark);
     padding-top: 1rem;
+}
+
+.checkout-drawer-btn {
+    display: block;
+    text-align: center;
+    background: var(--color-green-dark);
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.05rem;
+    font-family: 'Shrimp';
+}
+
+.checkout-drawer-btn:hover {
+    background: var(--color-brown-light);
 }
 
 .view-cart-btn {
