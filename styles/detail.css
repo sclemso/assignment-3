@@ -187,3 +187,17 @@ main {
 .confirm-btn:hover {
     background: var(--color-brown-light);
 }
+
+.back-link {
+    display: inline-block;
+    color: var(--color-brown-dark);
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: "Shrimp";
+    margin-bottom: 1rem;
+}
+
+.back-link:hover {
+    color: var(--color-brown-light);
+    cursor: pointer;
+}
