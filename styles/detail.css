@@ -203,6 +203,13 @@ main {
     cursor: pointer;
 }
 
+#detail-desc p {
+    font-family: 'Hedvig';
+    font-size: 1.3rem;
+    color: var(--color-brown-dark);
+    padding: 0.2rem;
+}
+
 @media (max-width: 500px) {
 
     .detail-layout {

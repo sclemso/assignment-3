@@ -68,6 +68,11 @@ main {
     font-size: 1rem;
 }
 
+.cart-empty a {
+    color: var(--color-brown-dark);
+    font-size: 1rem;
+}
+
 .qty-btn {
     background: transparent;
     border: none;

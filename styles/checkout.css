@@ -34,6 +34,8 @@ main {
     align-items: flex-start;
 }
 
+
+
 .checkout-left {
     flex: 1;
     display: flex;
