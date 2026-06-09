@@ -1,6 +1,8 @@
 
 main h1 {
     color: var(--color-green-dark);
+    padding-left: 1rem;
+    font-family: 'Shrimp';
 }
 
 .product-price {

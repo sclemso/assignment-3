@@ -105,3 +105,33 @@ nav {
 .newsletter-submit:hover {
     background: var(--color-brown-light);
 }
+
+@media (max-width: 500px) {
+
+    .newsletter-box {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .newsletter-left {
+        text-align: center;
+    }
+
+    .newsletter-right {
+        width: 100%;
+    }
+
+    .newsletter-input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .newsletter-submit {
+        width: 100%;
+    }
+
+    .confirmation-message h1 {
+        font-size: 2.5rem;
+    }
+
+}

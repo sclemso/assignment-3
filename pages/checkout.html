@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/styles/checkout.css" />
     <link rel="stylesheet" href="/styles/colors.css" />
     <link rel="stylesheet" href="/styles/typography.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
     <header> 
@@ -24,7 +25,7 @@
                     <div class="field-row">
                         <div class="field-group">
                             <label class="checkout-label">*First Name</label>
-                            <input class="checkout-input" type="text" placeholder="John" required minlength="1"/>
+                            <input id="first-name" class="checkout-input" type="text" placeholder="John" required />
                         </div>
                         <div class="field-group">
                             <label class="checkout-label">*Last Name</label>
@@ -33,7 +34,7 @@
                     </div>
                     <div class="field-group">
                         <label class="checkout-label">*Email</label>
-                        <input class="checkout-input full" type="email" placeholder="johnsmith@example.com" required/>
+                        <input id="email" class="checkout-input" type="email" placeholder="johnsmith@example.com" required />
                     </div>
                     <div class="field-group">
                         <label class="checkout-label">*Phone</label>

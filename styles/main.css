@@ -10,7 +10,7 @@ body {
 
 nav {
     overflow: hidden;
-    height: 4rem;
+    height: 3rem;
     padding-right: 1.2rem;
     display: flex;
     justify-content: space-between;
@@ -20,6 +20,7 @@ nav {
 
 nav h1 {
     font-family: 'Shrimp';
+    font-size: 1.7rem;
     color: var(--color-brown-dark);
 }
 
@@ -69,8 +70,8 @@ nav img {
 }
 
 .subnavbtn {
-    height: 4rem;
-    width: 5.2rem;
+    height: 3rem;
+    width: 4rem;
     margin-left: 1.2rem;
 }
 
@@ -92,6 +93,7 @@ nav img {
     display: none;
     position: absolute;
     left: 0;
+    top: 3rem;
     background-color: var(--color-brown-dark);
     width: 100%;
     z-index: 1;
@@ -125,12 +127,12 @@ nav img {
     display: block;
     text-align: center;
     background: var(--color-brown-dark);
-    color: white;
+    color: var(--color-background);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 700;
     font-family: 'Shrimp', sans-serif;
-    padding: 12px;
+    padding: 1rem;
     transition: letter-spacing 0.8s ease;
 }
 
@@ -139,13 +141,13 @@ nav img {
     cursor: pointer;
 }
 
+
  .content-box {
     position: relative;
     overflow: hidden;
-    width: 75rem;
+    width: 100%;
     height: 27rem;
-    border-radius: 15px;
-    margin: 1.1rem auto;
+    margin: 0 0;
     cursor: pointer;
  }
 
@@ -529,4 +531,91 @@ footer {
     font-size: 0.9rem;
     text-align: center;
     margin-top: 2rem;
+}
+
+@media (max-width: 500px) {
+
+    .homeimage {
+        height: 24rem;
+        overflow: hidden;
+    }
+
+    .heading-image {
+        transform: none;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .heading-overlay {
+        font-size: 2.5rem;
+        top: 38%;
+        left: 50%;
+    }
+
+    .heading-overlay2 {
+        font-size: 2.5rem;
+        top: 50%;
+        left: 58%;
+    }
+
+    .content-box {
+        width: 100%;
+        margin: 0;
+    }
+
+    .story-scoop {
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    #c1 {
+        border-right: none;
+        border-bottom: 1px solid var(--color-brown-dark);
+        padding-right: 0;
+        padding-bottom: 2rem;
+        width: 100%;
+    }
+
+    #c2 {
+        padding-left: 0;
+        padding-top: 2rem;
+        width: 100%;
+    }
+
+    nav h1 {
+        font-size: 1.2rem;
+    }
+
+    body {
+        background-color: var(--color-background);
+    }
+
+    .content-overlay {
+        opacity: 1;
+    }
+
+    #mangoes-title, #serving-title, #everyone-title, #hazel-title, #pour-title {
+        opacity: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 1.5rem;
+        width: 90%;
+    }
+
+    .content-box {
+        height: 16rem;
+        overflow: hidden;
+    }
+
+    .content-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.5);
+    }
 }

@@ -247,7 +247,7 @@ function renderCartPage() {
 
     itemsEl.innerHTML = cart.map((item, index) => `
     <div class="cart-item">
-        <img src="${item.img}" alt="${item.title}" />
+        <img src="${item.img}" alt="${item.title}" class="cart-item-img" />
         <div class="cart-item-right">
             <div class="cart-item-title">${item.title}</div>
             <div class="cart-item-price">${item.price}</div>
@@ -259,7 +259,7 @@ function renderCartPage() {
                   <button class="qty-btn" onclick="changeCartQty(${index}, 1)">+</button>
               </div>
               <button class="cart-remove-btn" onclick="removeFromCart(${index})">
-                  <img src="/assets/remove.svg" alt="Remove" />
+                  <img class="remove-button" src="/assets/remove.svg" alt="Remove" />
               </button>
             </div>
         </div>
@@ -303,7 +303,7 @@ function renderCheckoutTotal() {
 }
 
 function placeOrder() {
-    const firstName = document.querySelector("input[placeholder='*First Name']")?.value;
+    const firstName = document.querySelector("input[placeholder='John']")?.value;
     const email = document.querySelector("input[type='email']")?.value;
 
     localStorage.setItem("checkout-name", firstName);
