@@ -36,51 +36,51 @@ const PRODUCTS = [
   { id: "1", 
     title: "Natural Rainbow",         
     price: "$96.00", 
-    img: "/assets/natural-rainbow.jpg",
+    img: "../assets/natural-rainbow.jpg",
     serve: "Serves 15-20",
     cake: true,
     desc: "An all natural, rainbow cake made with organic milk and whole food ingredients topped with a sugar cream frosting. | Light caramel ice cream, coloured with green and blue spirulina, beetroot and turmeric. |Each cake is made to order by hand so please allow at least 2 business days for us to make yours."},
   { id: "2", 
     title: "Custom Ice Cream Cake",   
     price: "$96.00", 
-    img: "/assets/custom-cake.jpg",
+    img: "../assets/custom-cake.jpg",
     serve: "Serves 15-20",
     cake: true,
     desc: "Choose your own flavour adventure and build your own custom ice cream cake from a selection of our most loved classics." },
   { id: "3", 
     title: "Almond Butter (460g)",    
     price: "$13.00", 
-    img: "/assets/almond.jpg",
+    img: "../assets/almond.jpg",
     cake: false,
     desc: "Organic almonds roasted and ground to a smooth butter by us in the BILLY VAN CREAMY kitchen using almonds and sea salt - and nothing else. | Perfection on hot focaccia, or in a fancy Swiss roll." },
   { id: "4", 
     title: "Strawberry Jam (460g)",   
     price: "$13.00", 
-    img: "/assets/strawberry.jpg",
+    img: "../assets/strawberry.jpg",
     cake: false,
     desc: "Handmade by us in the BILLY VAN CREAMY kitchen using local Strawberries, Lemon Juice and Organic Raw Sugar. We make large batches of jam when Strawberries are at their best in late Spring to early Autumn to last us through the Winter months. | Add to yoghurt, scones, or use to jazz up your sponge cake." },
     { id: "5", 
     title: "Peanut Butter (460g)",    
     price: "$13.00", 
-    img: "/assets/peanut.jpg",
+    img: "../assets/peanut.jpg",
     cake: false,
     desc: "Roasted and ground us in the BILLY VAN CREAMY kitchen using Peanuts and Celtic Sea Salt and nothing else. Make yourself some Ants On A Log, use in satay sauce, or have on toast with banana." },
     { id: "6", 
     title: "Paper Gift Voucher",      
     price: "$20.00", 
-    img: "/assets/voucher.jpg",
+    img: "../assets/voucher.jpg",
     cake: false,
     desc: "Purchase a gift voucher for someone you love and either pick it up in store or we'll post it out to them  - hooray for fun mail! | Each voucher has our Oscar Grønner print on the front to make it a bright and special gift" },
     { id: "7", 
     title: "'Natural' Embroided Cap", 
     price: "$35.00", 
-    img: "/assets/cap.jpg",
+    img: "../assets/cap.jpg",
     cake: false,
     desc: "Cotton caps with our Natural word mark on the front for all to see. Natural legend? Natural cutie? Natural troublemaker? You decide." },
     { id: "8", 
     title: "Kid's Melon Brim Hat",    
     price: "$40.00", 
-    img: "/assets/hat.jpg",
+    img: "../assets/hat.jpg",
     cake: false,
     desc: "Designed by our friends at Contain Design Studio, our melon hat is designed to bring joy and sun protection to fruit lovers everywhere. | Cotton broad brimmed kid's hat with melon seeds and word mark embroidery. | Other features include internal binding and a safety chord with toggle to cheat the wind in a zingy citrus colour" },
     ];
@@ -259,7 +259,7 @@ function renderCartPage() {
     if (!itemsEl) return; // not on cart page
 
     if (cart.length === 0) {
-        itemsEl.innerHTML = '<p class="cart-empty">Your cart is empty. <a class="cart-empty" href="/pages/shop.html">Continue shopping→</a></p>';
+        itemsEl.innerHTML = '<p class="cart-empty">Your cart is empty. <a class="cart-empty" href="../pages/shop.html">Continue shopping→</a></p>';
         summaryEl.innerHTML = "";
         return;
     }
@@ -278,7 +278,7 @@ function renderCartPage() {
                   <button class="qty-btn" onclick="changeCartQty(${index}, 1)">+</button>
               </div>
               <button class="cart-remove-btn" onclick="removeFromCart(${index})">
-                  <img class="remove-button" src="/assets/remove.svg" alt="Remove" />
+                  <img class="remove-button" src="../assets/remove.svg" alt="Remove" />
               </button>
             </div>
         </div>
@@ -294,7 +294,7 @@ function renderCartPage() {
             <span>Total</span>
             <span>$${total.toFixed(2)}</span>
         </div>
-        <button class="checkout-btn" onclick="location.href='/pages/checkout.html'">Proceed to Checkout</button>
+        <button class="checkout-btn" onclick="location.href='../pages/checkout.html'">Proceed to Checkout</button>
     `;
 }
 
@@ -327,7 +327,7 @@ function placeOrder() {
 
     localStorage.setItem("checkout-name", firstName);
     localStorage.setItem("checkout-email", email);
-    location.href = "/pages/confirm.html";
+    location.href = "../pages/confirm.html";
 }
 
 function renderConfirmationPage() {
