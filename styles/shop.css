@@ -5,17 +5,30 @@ main h1 {
     font-family: 'Shrimp';
 }
 
+main {
+  font-family: 'Shrimp';
+}
+
 .product-price {
     color: var(--color-brown-dark);
+    font-size: 1.3rem;
 }
 
 .product-info {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .product-title {
     color: var(--color-brown-dark);
+    max-width: 70%;
+    word-wrap: break-word;
+    text-align: left;
+    margin-top: 0;
+    font-size: 1.8rem;
 }
 
 .product-card {

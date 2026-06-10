@@ -39,7 +39,7 @@ const PRODUCTS = [
     img: "/assets/natural-rainbow.jpg",
     serve: "Serves 15-20",
     cake: true,
-    desc: "An all natural, rainbow cake made with organic milk and whole food ingredients topped with a sugar cream frosting. | Light caramel ice cream, coloured with green and blue spirulina, beetroot and turmeric." |"Each cake is made to order by hand so please allow at least 2 business days for us to make yours."},
+    desc: "An all natural, rainbow cake made with organic milk and whole food ingredients topped with a sugar cream frosting. | Light caramel ice cream, coloured with green and blue spirulina, beetroot and turmeric. |Each cake is made to order by hand so please allow at least 2 business days for us to make yours."},
   { id: "2", 
     title: "Custom Ice Cream Cake",   
     price: "$96.00", 
