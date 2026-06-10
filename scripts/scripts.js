@@ -171,7 +171,6 @@ const id = params.get("id");
 const product = PRODUCTS.find(p => p.id === id);
 
 if (document.getElementById("detail-img")) {
-    // only runs on product-detail.html
     if (product) {
         document.getElementById("detail-img").src = product.img;
         document.getElementById("detail-img").alt = product.title;
@@ -256,7 +255,7 @@ function renderDrawer() {
 function renderCartPage() {
     const itemsEl = document.getElementById("cart-items");
     const summaryEl = document.getElementById("cart-summary");
-    if (!itemsEl) return; // not on cart page
+    if (!itemsEl) return;
 
     if (cart.length === 0) {
         itemsEl.innerHTML = '<p class="cart-empty">Your cart is empty. <a class="cart-empty" href="../pages/shop.html">Continue shopping→</a></p>';
